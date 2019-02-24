@@ -1,0 +1,62 @@
+<mat-card class="card">
+  <div class="color-view">
+    <h1 [ngStyle]="{ 'color': colorValue }">HSV</h1>
+  </div>
+  <div
+    [ngStyle]="{ 'background-color': colorValue }"
+    class="canvas"></div>
+  <div class="row">
+    <h3>H</h3>
+    <mat-slider
+      [max]="360"
+      [min]="0"
+      [step]="1"
+      [(ngModel)]="H"
+      [thumbLabel]="true"
+      (input)="onSliderChangeH($event)"
+    ></mat-slider>
+    <mat-form-field class="input-value-rgb">
+      <input matInput type="number" [(ngModel)]="H"
+             min="0"
+             max="360"
+             appNumericOnly="360"
+             (input)="onChangeInput($event)">
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <h3>S(%)</h3>
+    <mat-slider
+      [max]="100"
+      [min]="0"
+      [step]="1"
+      [(ngModel)]="S"
+      [thumbLabel]="true"
+      (input)="onSliderChangeS($event)"
+    ></mat-slider>
+    <mat-form-field class="input-value-rgb">
+      <input matInput type="number" [(ngModel)]="S"
+             min="0"
+             max="100"
+             appNumericOnly="100"
+             (input)="onChangeInput($event)">
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <h3>V(%)</h3>
+    <mat-slider
+      [max]="100"
+      [min]="0"
+      [step]="1"
+      [(ngModel)]="V"
+      [thumbLabel]="true"
+      (input)="onSliderChangeV($event)"
+    ></mat-slider>
+    <mat-form-field class="input-value-rgb">
+      <input matInput type="number" [(ngModel)]="V"
+             min="0"
+             max="100"
+             appNumericOnly="100"
+             (input)="onChangeInput($event)">
+    </mat-form-field>
+  </div>
+</mat-card>

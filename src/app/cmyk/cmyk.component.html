@@ -1,0 +1,80 @@
+<mat-card class="card">
+  <div class="color-view">
+    <h1 [ngStyle]="{ 'color': colorValue }">CMYK</h1>
+  </div>
+  <div
+    [ngStyle]="{ 'background-color': colorValue }"
+    class="canvas"></div>
+
+  <div class="row">
+    <h3>C(%)</h3>
+    <mat-slider
+      [max]="100"
+      [min]="0"
+      [step]="1"
+      [(ngModel)]="C"
+      [thumbLabel]="true"
+      (input)="onSliderChangeC($event)"
+    ></mat-slider>
+    <mat-form-field class="input-value-rgb">
+      <input matInput type="number" [(ngModel)]="C"
+             min="0"
+             max="100"
+             (input)="onChangeInput($event)">
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <h3>M(%)</h3>
+    <mat-slider
+      [max]="100"
+      [min]="0"
+      [step]="1"
+      [(ngModel)]="M"
+      [thumbLabel]="true"
+      (input)="onSliderChangeM($event)"
+    ></mat-slider>
+    <mat-form-field class="input-value-rgb">
+      <input matInput type="number" [(ngModel)]="M"
+             min="0"
+             max="100"
+             appNumericOnly="100"
+             (input)="onChangeInput($event)">
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <h3>Y(%)</h3>
+    <mat-slider
+      [max]="100"
+      [min]="0"
+      [step]="1"
+      [(ngModel)]="Y"
+      [thumbLabel]="true"
+      (input)="onSliderChangeY($event)"
+    ></mat-slider>
+    <mat-form-field class="input-value-rgb">
+      <input matInput type="number" [(ngModel)]="Y"
+             min="0"
+             max="100"
+             appNumericOnly="100"
+             (input)="onChangeInput($event)">
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <h3>K(%)</h3>
+    <mat-slider
+      [max]="100"
+      [min]="0"
+      [step]="1"
+      [(ngModel)]="K"
+      [thumbLabel]="true"
+      (input)="onSliderChangeK($event)"
+    ></mat-slider>
+    <mat-form-field class="input-value-rgb">
+      <input matInput type="number" [(ngModel)]="K"
+             min="0"
+             max="100"
+             appNumericOnly="100"
+             (input)="onChangeInput($event)">
+    </mat-form-field>
+  </div>
+</mat-card>

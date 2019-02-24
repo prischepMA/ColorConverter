@@ -1,0 +1,65 @@
+<mat-card class="card">
+  <div class="color-view">
+    <h1 [ngStyle]="{ 'color': colorValue }">RGB</h1>
+  </div>
+  <div
+    [ngStyle]="{ 'background-color': colorValue }"
+    class="canvas"></div>
+  <div class="row">
+    <h3>R</h3>
+    <mat-slider
+      [max]="maxRGB"
+      [min]="minRGB"
+      [step]="stepRGB"
+      [(ngModel)]="R"
+      [thumbLabel]="true"
+      (input)="onSliderChangeR($event)"
+    ></mat-slider>
+    <mat-form-field class="input-value-rgb">
+      <input matInput type="number" [(ngModel)]="R"
+             (input)="onChangeInput($event)"
+             (change)="onChangeInput($event)"
+             min="0"
+             max="255"
+             appNumericOnly="255">
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <h3>G</h3>
+    <mat-slider
+      [max]="maxRGB"
+      [min]="minRGB"
+      [step]="stepRGB"
+      [(ngModel)]="G"
+      [thumbLabel]="true"
+      (input)="onSliderChangeG($event)"
+    ></mat-slider>
+    <mat-form-field class="input-value-rgb">
+      <input matInput type="number" [(ngModel)]="G"
+             (input)="onChangeInput($event)"
+             min="0"
+             max="255"
+             appNumericOnly="255">
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <h3>B</h3>
+    <mat-slider
+      [max]="maxRGB"
+      [min]="minRGB"
+      [step]="stepRGB"
+      [(ngModel)]="B"
+      [thumbLabel]="true"
+      (input)="onSliderChangeB($event)"
+    ></mat-slider>
+    <mat-form-field class="input-value-rgb">
+      <input matInput
+             type="number"
+             [(ngModel)]="B"
+             (input)="onChangeInput($event)"
+             min="0"
+             max="255"
+             appNumericOnly="255">
+    </mat-form-field>
+  </div>
+</mat-card>
