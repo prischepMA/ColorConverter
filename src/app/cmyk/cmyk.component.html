@@ -20,6 +20,7 @@
       <input matInput type="number" [(ngModel)]="C"
              min="0"
              max="100"
+             appNumericOnly="100"
              (input)="onChangeInput($event)">
     </mat-form-field>
   </div>
